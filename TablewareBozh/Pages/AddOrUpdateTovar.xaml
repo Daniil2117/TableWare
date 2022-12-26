@@ -1,0 +1,94 @@
+﻿<Page x:Class="TablewareBozh.Pages.AddOrUpdateTovar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TablewareBozh.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1800"
+      Title="AddOrUpdateTovar">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Добавление или изменение товара" FontSize="42" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Text="Артикул:" FontSize="38" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Width="550" FontSize="38" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="TovarId"></TextBox>
+
+            <TextBlock Text="Продукт:" FontSize="38" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Width="550" FontSize="38"  Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Name="TovarName"></TextBox>
+
+
+            <TextBlock Text="Стоимость:" FontSize="38" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Width="350" FontSize="38"  Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="CostTovar"></TextBox>
+
+
+            <TextBlock Text="Скидка(ТЕКУЩ):" FontSize="38" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Width="550" FontSize="38" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="MaxDiscount"></TextBox>
+
+
+            <TextBlock Text="Производитель:" FontSize="38" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <ComboBox Width="550" FontSize="38" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Name="NameManuf"></ComboBox>
+
+
+            <TextBlock Text="Категория:" FontSize="38" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <ComboBox Width="550" FontSize="38"  Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="CategTovar"></ComboBox>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Количество на складе:" FontSize="38" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Width="350" FontSize="38" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="KolvoOnSklad"></TextBox>
+
+            <TextBlock Text="Описание:" FontSize="38" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Width="440" FontSize="38" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="DescriptionTovar"></TextBox>
+
+            <TextBlock Text="Картинка:" FontSize="38" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <Image Grid.Row="2" Grid.Column="1" Width="330" Height="200" Name="PhotoTovar"></Image>
+
+            <Button Grid.Column="0" Grid.Row="3" Width="250" Height="60" Name="GetNamePict" Click="GetNamePict_Click">
+                <TextBlock Text="Путь" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            </Button>
+            <TextBox Width="440" FontSize="38" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="NamePict"></TextBox>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <Button Width="350" Height="60" Name="UpdateNewTovar" Margin="50 0">
+                <TextBlock Text="Изменить" FontSize="32"></TextBlock>
+            </Button>
+            <Button Width="350" Height="60" Name="AddNewTovat" Click="AddNewTovat_Click">
+                <TextBlock Text="Добавить" FontSize="32"></TextBlock>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>
